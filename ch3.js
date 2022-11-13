@@ -54,7 +54,7 @@ Test it on 50 and 75. See how it behaves on -1. Why? Can you think of a way to f
 
 const isEven = (num) => {
 	if (num === 0) return true;
-	if (num === 1 || num < 0) return false;
+	if (num === 1) return false;
 	if (num < 0) return isEven(-num);
 	return isEven(num - 2);
 };
