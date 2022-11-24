@@ -41,3 +41,18 @@ Properties that contain functions are generally called methods of the value they
 
 Same on arrays, push and pop methods -> functions that allow you to add or remove elements from the array.
 
+
+
+
+##  OBJECTS
+
+Values of type object are arbitrary collections of properties separated by commas
+
+The `delete` operator would remove a property entirely from an object
+Between setting an object prop to `undefined` or using the `delete` operator, difference is with the first one, the prop is removed and no longer exist on that object, on the 2nd case, the prop remains however it does not hold any value (other than `undefined`).
+
+
+The "binary"  `in`  operator when applied to a string and a object, tells you whether a property with that name exists on this object or NOT.
+
+`object.assign` copies all props from one object to another new object. Both new and old object would still refer to the same place in memory, so any change in one, will reflect on the other. (value by reference)
+
