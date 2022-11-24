@@ -56,3 +56,24 @@ The "binary"  `in`  operator when applied to a string and a object, tells you wh
 
 `object.assign` copies all props from one object to another new object. Both new and old object would still refer to the same place in memory, so any change in one, will reflect on the other. (value by reference)
 
+
+
+Arrays
+Are then just a special type of objects used to store a sequence of values, typeof [] -> object.
+In JS everything is an object! 
+
+
+
+## Array Methods:
+
+Push : adds items to the end of the array, return value is the length of updated array
+Pop:  removes the last element of an array, returns the removed element
+Shift:  removes the first element of an array, returns the shifted element
+Unshift: add an element to the beginning of the array, returns length of updated array
+indexOf:   returns the first index (position) of a specified value,  returns -1 if the value is not                                        
+		found. Could take string to look for, and index to start at ,goes left to right.
+Lastindexof: method returns the last index (position) of a specified value. method returns -1 if 
+		the value is not found.
+Slice: returns selected area from old array as a new array, takes (indext to start, index to stop [
+	not included in new array]), default start at 0 if no value was provided, default end is last element if no end value was provided. Could negative values and would start counting right to left
+Concat:  method concatenates (joins) two or more arrays. returns a new array, containing the joined arrays.  Does NOT change the original arrays!
