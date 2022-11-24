@@ -126,3 +126,29 @@ Repeat:  Returns a string consisting of the elements of the object repeated coun
 `padStart`: method takes desired length and padding chars as argument
 
 
+
+##  REST PARAMETERS
+
+Allows a function to accept an indefinite number of arguments as an array
+E.g.
+function sum(...theArgs) {
+  let total = 0;
+  for (const arg of theArgs) {
+    total += arg;
+  }
+  return total;
+}
+
+A function definition's last parameter can be prefixed with `…`  which will cause all remaining (user supplied) parameters to be placed within a standard JavaScript array. Only the last parameter in a function definition can be a rest parameter.
+
+
+##  THE MATH OBJECT
+
+Math is a built-in object that has properties and methods for mathematical constants and functions. It's not a function object.
+
+Unlike many other global objects, Math is not a constructor. All properties and methods of Math are static. You refer to the constant pi as Math.PI and you call the sine function as Math.sin(x), where x is the method's argument. Constants are defined with the full precision of real numbers in JavaScript.
+
+` Neither static methods nor static properties can be called on instances of the class. Instead, they're called on the class itself.`
+
+So to call any of the Math Object properties or methods you have to use Math.`property name`
+
