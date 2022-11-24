@@ -152,3 +152,38 @@ Unlike many other global objects, Math is not a constructor. All properties and 
 
 So to call any of the Math Object properties or methods you have to use Math.`property name`
 
+
+##  Destructuring
+
+a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
+
+E.g.
+`let a, b;
+[a, b] = [10, 20];`
+
+ // a-> 10
+// b-> 20
+
+
+
+##  JSON (JS Object Notation)
+
+To send data over we need to `serialize` it, this means to convert it into a flat description, one popular serialization format is called `JSON`. It is widely used as a data storage and communication format on the web.
+
+
+ All properties and methods of JSON are static (just like the Math object).
+
+Property names must be surrounded by double-quoted strings; trailing commas are forbidden.
+Leading zeros are prohibited. A decimal point must be followed by at least one digit. `NaN` and `Infinity` are unsupported.
+
+ONLY simple data expressions are allowed; no function calls, bindings, or anything that involves actual computation.
+
+
+JSON.parse()
+
+Convert/Parse a JSON object into JS object.
+
+
+JSON.stringify() -> convert JS data/string into JSON
+
+Return a JSON string corresponding to the specified value, optionally including only certain properties or replacing property values in a user-defined manner.
