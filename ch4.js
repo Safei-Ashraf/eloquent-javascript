@@ -13,3 +13,35 @@
 
 //
 // Your code here.
+const range = (start, end) => {
+	let resultArr = [];
+	for (let i = start; i <= end; i++) {
+		resultArr.push(i);
+	}
+	console.log(resultArr);
+	return resultArr;
+};
+
+const sum = (arr) => {
+	let sum = 0;
+	for (const elem of arr) {
+		sum += elem;
+	}
+	return sum;
+};
+//Bonus:
+
+const bonusRange = (start, end, step = 1) => {
+	const resultArr = [];
+	//take steps count to check on arr length;
+	if (start < end) {
+		for (let i = start; i <= end; i += step) {
+			resultArr.includes(i) ? null : resultArr.push(i);
+		}
+	} else if (end < start) {
+		for (let i = start; i >= end; i -= Math.abs(step)) {
+			resultArr.includes(i) ? null : resultArr.push(i);
+		}
+	}
+	return resultArr;
+};
