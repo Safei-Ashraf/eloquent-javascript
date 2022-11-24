@@ -28,3 +28,16 @@ How access properties in JS?
 		Var name = 'ding'
 		Object[name] -> object.ding
 		
+
+
+## Methods
+
+
+
+Properties that hold a function value
+E.g. let doh = "Doh"   ----> typeof doh.toUpperCase();  ===> function
+
+Properties that contain functions are generally called methods of the value they belong to as "toUpperCase" is a method of string. Which is a function that returns a copy of the original string whose letters are all in upper case.
+
+Same on arrays, push and pop methods -> functions that allow you to add or remove elements from the array.
+
