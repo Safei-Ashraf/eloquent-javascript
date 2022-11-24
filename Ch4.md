@@ -96,3 +96,33 @@ While on the 2nd case, a change to an object would refelct on the other, since b
 
 
 <italic>Correlation is a measure of dependence between statistical variables. </italic>
+
+
+
+
+
+##  STRINGS AND THEIR PROPERTIES
+
+Strings by default have props like `toUpperCase` and `length` but if you try to add custom props by yourself, it won't stick, since strings (and Booleans) are not of type object, so it won't store any custom props you might try to add on them (will not generate error while adding)
+As mentioned before, such values are immutable and can not be changed.
+
+Some built-in methods (properties that store a func) on strings
+
+Note that `length` is a property
+
+
+Slice: extracts a section of a string and returns it as a new string, without modifying the original 
+		string.
+		
+IndexOf:  given one argument: a substring to search for, searches the entire calling string, and 
+		returns the index of the first occurrence of the specified substring. Given a second argument: a number, the method returns the first occurrence of the specified substring at an index greater than or equal to the specified number.
+		
+Split: takes a pattern and divides a String into an ordered list of substrings by searching for the 
+	   pattern, puts these substrings into an array, and returns the array.
+
+Repeat:  Returns a string consisting of the elements of the object repeated count times.
+
+`trim`: this method removes white space (spaces, new lines, tabs and similar chars)
+`padStart`: method takes desired length and padding chars as argument
+
+
