@@ -77,3 +77,22 @@ Lastindexof: method returns the last index (position) of a specified value. meth
 Slice: returns selected area from old array as a new array, takes (indext to start, index to stop [
 	not included in new array]), default start at 0 if no value was provided, default end is last element if no end value was provided. Could negative values and would start counting right to left
 Concat:  method concatenates (joins) two or more arrays. returns a new array, containing the joined arrays.  Does NOT change the original arrays!
+
+
+
+## MUTABILITY
+
+Primative  data types (numbers, strings, Booleans) are immutable, it is impossible to change the value of these types. You can mix them and derive a new value of them, but the original values will always remain the same.
+
+When we have 2 bindings storing the numbers 120 and 120, we can consider them to be the same and equals. Even if they do not refer to the same physical bit (memory location).
+
+Objects are different
+You can change/mutate objects, you can change a prop value, add or remove props from the same object.
+
+But there is a difference between having 2 object with similar props and having to refernces to the same object!
+The first will not evaluate to true when compared as equals, since they don't refer to the same memory location/refernces even if they hold same values/props.
+
+While on the 2nd case, a change to an object would refelct on the other, since both of them refer to the same memory location.
+
+
+<italic>Correlation is a measure of dependence between statistical variables. </italic>
