@@ -66,15 +66,23 @@ const reverseArray = (arr) => {
 	}
 	return resultArr;
 };
-
 console.log(reverseArray(["A", "B", "C"]));
 // → ["C", "B", "A"];
-
+//array.splice(start, deleteCount, itemToAdd)
+//array.pop() => removes last element in array and returns that element.
 const reverseArrayInPlace = (arr) => {
-	arr = reverseArray(arr);
-	//TODO
+	for (let i = 0; i < arr.length; i++) {
+		arr.splice(i, 0, arr.pop());
+	}
+	return arr;
 };
-let arrayValue = [1, 2, 3, 4, 5];
-reverseArrayInPlace(arrayValue);
-console.log(arrayValue);
-// → [5, 4, 3, 2, 1]
+//Bonus Solution
+const reverseArrayInPlace2 = (arr) => {
+	let temp;
+	for (let i = 0; i < Math.floor(arr.length / 2); i++) {
+		temp = arr[i];
+		arr[i] = arr[arr.length - 1 - i];
+		arr[arr.length - 1 - i] = temp;
+	}
+	return arr;
+};
