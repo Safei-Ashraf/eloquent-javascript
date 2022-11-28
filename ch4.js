@@ -123,6 +123,18 @@ const arrayToList = (arr) => {
 	for (let i = length - 1; i >= 0; i--) {
 		list = { value: arr[i], rest: list };
 	}
-	console.log(list);
+	return list;
 };
-arrayToList(exampleArray);
+let newList = arrayToList(exampleArray);
+
+// Also write a listToArray function that produces an array from a list
+
+const listToArray = (list) => {
+	let arr = [];
+	for (let node = list; node; node = node.rest) {
+		arr.push(node.value);
+	}
+	return arr;
+};
+
+console.log(listToArray(newList));
