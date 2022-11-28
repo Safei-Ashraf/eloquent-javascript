@@ -138,3 +138,23 @@ const listToArray = (list) => {
 };
 
 console.log(listToArray(newList));
+// Then add a helper function prepend, which takes an element and a list and creates a new list that adds the element to the front of the input list
+const prepend = (elem, list) => {
+	return { value: elem, rest: list };
+};
+//and nth, which takes a list and a number and returns the element at the given position in the list
+//(with zero referring to the first element) or undefined when there is no such element.
+const nth = (list, number) => {
+	//if no list provided
+	if (!list) return undefined;
+	//if the number proived = 0, return first element of the list:
+	else if (number == 0) return list.value;
+	//if any other number than first elem, means we have to dive another level inside the list
+	//to find the next value
+	//list.rest -> the next level of the list
+	// n-1, represnt lower index since we dived a level (nested)	
+	else
+	{
+		nth(list.rest, number - 1);
+	}
+};
