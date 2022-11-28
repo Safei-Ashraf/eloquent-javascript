@@ -1,160 +1,196 @@
-// // Exercises
-// // The sum of a range
-// // The introduction of this book alluded to the following as a nice way to compute the sum of a range of numbers:
+// // // Exercises
+// // // The sum of a range
+// // // The introduction of this book alluded to the following as a nice way to compute the sum of a range of numbers:
 
-// // console.log(sum(range(1, 10)));
-// // Write a range function that takes two arguments, start and end, and returns an array containing all the numbers from start up to (and including) end.
+// // // console.log(sum(range(1, 10)));
+// // // Write a range function that takes two arguments, start and end, and returns an array containing all the numbers from start up to (and including) end.
 
-// // Next, write a sum function that takes an array of numbers and returns the sum of these numbers. Run the example program and see whether it does indeed return 55.
+// // // Next, write a sum function that takes an array of numbers and returns the sum of these numbers. Run the example program and see whether it does indeed return 55.
 
-// // As a bonus assignment, modify your range function to take an optional third argument that indicates the “step” value used when building the array.
-// // If no step is given, the elements go up by increments of one, corresponding to the old behavior.The function call range(1, 10, 2) should return [1, 3, 5, 7, 9].
-// //Make sure it also works with negative step values so that range(5, 2, -1) produces[5, 4, 3, 2].
+// // // As a bonus assignment, modify your range function to take an optional third argument that indicates the “step” value used when building the array.
+// // // If no step is given, the elements go up by increments of one, corresponding to the old behavior.The function call range(1, 10, 2) should return [1, 3, 5, 7, 9].
+// // //Make sure it also works with negative step values so that range(5, 2, -1) produces[5, 4, 3, 2].
 
-// //
-// // Your code here.
-// const range = (start, end) => {
-// 	let resultArr = [];
-// 	for (let i = start; i <= end; i++) {
-// 		resultArr.push(i);
+// // //
+// // // Your code here.
+// // const range = (start, end) => {
+// // 	let resultArr = [];
+// // 	for (let i = start; i <= end; i++) {
+// // 		resultArr.push(i);
+// // 	}
+// // 	console.log(resultArr);
+// // 	return resultArr;
+// // };
+
+// // const sum = (arr) => {
+// // 	let sum = 0;
+// // 	for (const elem of arr) {
+// // 		sum += elem;
+// // 	}
+// // 	return sum;
+// // };
+// // //Bonus:
+
+// // const bonusRange = (start, end, step = 1) => {
+// // 	const resultArr = [];
+// // 	//take steps count to check on arr length;
+// // 	if (start < end) {
+// // 		for (let i = start; i <= end; i += step) {
+// // 			resultArr.includes(i) ? null : resultArr.push(i);
+// // 		}
+// // 	} else if (end < start) {
+// // 		for (let i = start; i >= end; i -= Math.abs(step)) {
+// // 			resultArr.includes(i) ? null : resultArr.push(i);
+// // 		}
+// // 	}
+// // 	return resultArr;
+// // };
+
+// // //2
+// // /*
+// // Reversing an array
+// // Arrays have a reverse method that changes the array by inverting the order in which its elements appear.
+// // For this exercise, write two functions, reverseArray and reverseArrayInPlace. The first, reverseArray,
+// // takes an array as argument and produces a new array that has the same elements in the inverse order.
+// // The second, reverseArrayInPlace, does what the reverse method does: it modifies the array given as argument by reversing its elements.
+// // Neither may use the standard reverse method.
+// // Thinking back to the notes about side effects and pure functions in the previous chapter,
+// // which variant do you expect to be useful in more situations? Which one runs faster?
+// // */
+// // // Your code here.
+
+// // const reverseArray = (arr) => {
+// // 	const resultArr = [];
+// // 	for (let i = arr.length - 1; i >= 0; i--) {
+// // 		resultArr.push(arr[i]);
+// // 	}
+// // 	return resultArr;
+// // };
+// // console.log(reverseArray(["A", "B", "C"]));
+// // // → ["C", "B", "A"];
+// // //array.splice(start, deleteCount, itemToAdd)
+// // //array.pop() => removes last element in array and returns that element.
+// // const reverseArrayInPlace = (arr) => {
+// // 	for (let i = 0; i < arr.length; i++) {
+// // 		arr.splice(i, 0, arr.pop());
+// // 	}
+// // 	return arr;
+// // };
+// // //Bonus Solution
+// // const reverseArrayInPlace2 = (arr) => {
+// // 	let temp;
+// // 	for (let i = 0; i < Math.floor(arr.length / 2); i++) {
+// // 		temp = arr[i];
+// // 		arr[i] = arr[arr.length - 1 - i];
+// // 		arr[arr.length - 1 - i] = temp;
+// // 	}
+// // 	return arr;
+// // };
+
+// // //Q3 A List
+// // /*
+// // Objects, as generic blobs of values, can be used to build all sorts of data structures.
+// // A common data structure is the list (not to be confused with array). A list is a nested set of objects,
+// // with the first object holding a reference to the second, the second to the third, and so on.
+
+// // let list = {
+// //   value: 1,
+// //   rest: {
+// //     value: 2,
+// //     rest: {
+// //       value: 3,
+// //       rest: null
+// //     }
+// //   }
+// // };
+// // A nice thing about lists is that they can share parts of their structure. For example,
+// // if I create two new values {value: 0, rest: list} and {value: -1, rest: list} (with list referring to the binding defined earlier),
+// // they are both independent lists, but they share the structure that makes up their last three elements. The original list is also still a valid three-element list.
+
+// // Write a function arrayToList that builds up a list structure like the one shown when given [1, 2, 3] as argument.
+// // Also write a listToArray function that produces an array from a list.
+// // Then add a helper function prepend, which takes an element and a list and creates a new list that adds the element to the front of the input list,
+// // and nth, which takes a list and a number and returns the element at the given position in the list (with zero referring to the first element)
+// // or undefined when there is no such element.
+
+// // If you haven’t already, also write a recursive version of nth.
+// // */
+// const exampleArray = [1, 2, 3];
+
+// const arrayToList = (arr) => {
+// 	const length = arr.length;
+// 	let list = null;
+// 	for (let i = length - 1; i >= 0; i--) {
+// 		list = { value: arr[i], rest: list };
 // 	}
-// 	console.log(resultArr);
-// 	return resultArr;
+// 	return list;
 // };
+// let newList = arrayToList(exampleArray);
 
-// const sum = (arr) => {
-// 	let sum = 0;
-// 	for (const elem of arr) {
-// 		sum += elem;
-// 	}
-// 	return sum;
-// };
-// //Bonus:
+// // Also write a listToArray function that produces an array from a list
 
-// const bonusRange = (start, end, step = 1) => {
-// 	const resultArr = [];
-// 	//take steps count to check on arr length;
-// 	if (start < end) {
-// 		for (let i = start; i <= end; i += step) {
-// 			resultArr.includes(i) ? null : resultArr.push(i);
-// 		}
-// 	} else if (end < start) {
-// 		for (let i = start; i >= end; i -= Math.abs(step)) {
-// 			resultArr.includes(i) ? null : resultArr.push(i);
-// 		}
-// 	}
-// 	return resultArr;
-// };
-
-// //2
-// /*
-// Reversing an array
-// Arrays have a reverse method that changes the array by inverting the order in which its elements appear.
-// For this exercise, write two functions, reverseArray and reverseArrayInPlace. The first, reverseArray,
-// takes an array as argument and produces a new array that has the same elements in the inverse order.
-// The second, reverseArrayInPlace, does what the reverse method does: it modifies the array given as argument by reversing its elements.
-// Neither may use the standard reverse method.
-// Thinking back to the notes about side effects and pure functions in the previous chapter,
-// which variant do you expect to be useful in more situations? Which one runs faster?
-// */
-// // Your code here.
-
-// const reverseArray = (arr) => {
-// 	const resultArr = [];
-// 	for (let i = arr.length - 1; i >= 0; i--) {
-// 		resultArr.push(arr[i]);
-// 	}
-// 	return resultArr;
-// };
-// console.log(reverseArray(["A", "B", "C"]));
-// // → ["C", "B", "A"];
-// //array.splice(start, deleteCount, itemToAdd)
-// //array.pop() => removes last element in array and returns that element.
-// const reverseArrayInPlace = (arr) => {
-// 	for (let i = 0; i < arr.length; i++) {
-// 		arr.splice(i, 0, arr.pop());
+// const listToArray = (list) => {
+// 	let arr = [];
+// 	for (let node = list; node; node = node.rest) {
+// 		arr.push(node.value);
 // 	}
 // 	return arr;
 // };
-// //Bonus Solution
-// const reverseArrayInPlace2 = (arr) => {
-// 	let temp;
-// 	for (let i = 0; i < Math.floor(arr.length / 2); i++) {
-// 		temp = arr[i];
-// 		arr[i] = arr[arr.length - 1 - i];
-// 		arr[arr.length - 1 - i] = temp;
+
+// console.log(listToArray(newList));
+// // Then add a helper function prepend, which takes an element and a list and creates a new list that adds the element to the front of the input list
+// const prepend = (elem, list) => {
+// 	return { value: elem, rest: list };
+// };
+// //and nth, which takes a list and a number and returns the element at the given position in the list
+// //(with zero referring to the first element) or undefined when there is no such element.
+// const nth = (list, number) => {
+// 	//if no list provided
+// 	if (!list) return undefined;
+// 	//if the number proived = 0, return first element of the list:
+// 	else if (number == 0) return list.value;
+// 	//if any other number than first elem, means we have to dive another level inside the list
+// 	//to find the next value
+// 	//list.rest -> the next level of the list
+// 	// n-1, represnt lower index since we dived a level (nested)
+// 	else
+// 	{
+// 		nth(list.rest, number - 1);
 // 	}
-// 	return arr;
 // };
 
-// //Q3 A List
-// /*
-// Objects, as generic blobs of values, can be used to build all sorts of data structures.
-// A common data structure is the list (not to be confused with array). A list is a nested set of objects,
-// with the first object holding a reference to the second, the second to the third, and so on.
+/*
+Deep comparison
+The == operator compares objects by identity. But sometimes you’d prefer to compare the values of their actual properties.
 
-// let list = {
-//   value: 1,
-//   rest: {
-//     value: 2,
-//     rest: {
-//       value: 3,
-//       rest: null
-//     }
-//   }
-// };
-// A nice thing about lists is that they can share parts of their structure. For example,
-// if I create two new values {value: 0, rest: list} and {value: -1, rest: list} (with list referring to the binding defined earlier),
-// they are both independent lists, but they share the structure that makes up their last three elements. The original list is also still a valid three-element list.
+Write a function deepEqual that takes two values and returns true only if 
+1- they are the same value 
+2- or are objects with the same properties, 
+3- where the values of the properties are equal when compared with a recursive call to deepEqual.
 
-// Write a function arrayToList that builds up a list structure like the one shown when given [1, 2, 3] as argument.
-// Also write a listToArray function that produces an array from a list.
-// Then add a helper function prepend, which takes an element and a list and creates a new list that adds the element to the front of the input list,
-// and nth, which takes a list and a number and returns the element at the given position in the list (with zero referring to the first element)
-// or undefined when there is no such element.
+To find out whether values should be compared directly (use the === operator for that) or have their properties compared, you can use the typeof operator.
+If it produces "object" for both values, you should do a deep comparison. 
+But you have to take one silly exception into account: because of a historical accident, typeof null also produces "object".
 
-// If you haven’t already, also write a recursive version of nth.
-// */
-const exampleArray = [1, 2, 3];
+The Object.keys function will be useful when you need to go over the properties of objects to compare them.
+*/
 
-const arrayToList = (arr) => {
-	const length = arr.length;
-	let list = null;
-	for (let i = length - 1; i >= 0; i--) {
-		list = { value: arr[i], rest: list };
+// Your code here.
+//The Object.keys() method returns an array of a given object's own enumerable string-keyed property names.
+
+const deepEqual = (a, b) => {
+	if (a == null || b == null) return false;
+	if (typeof a != "object" || typeof b != "object") return false;
+
+	let objAProps = Object.keys(a);
+	let objBProps = Object.keys(b);
+	if (objAProps.length !== objBProps.length) return false;
+	//recursive call to nested keys( if any)
+
+	for (let prop of objAProps) {
+		if (!objBProps.includes(prop) || !deepEqual(a[prop], b[prop]))
+			return false;
 	}
-	return list;
-};
-let newList = arrayToList(exampleArray);
-
-// Also write a listToArray function that produces an array from a list
-
-const listToArray = (list) => {
-	let arr = [];
-	for (let node = list; node; node = node.rest) {
-		arr.push(node.value);
-	}
-	return arr;
-};
-
-console.log(listToArray(newList));
-// Then add a helper function prepend, which takes an element and a list and creates a new list that adds the element to the front of the input list
-const prepend = (elem, list) => {
-	return { value: elem, rest: list };
-};
-//and nth, which takes a list and a number and returns the element at the given position in the list
-//(with zero referring to the first element) or undefined when there is no such element.
-const nth = (list, number) => {
-	//if no list provided
-	if (!list) return undefined;
-	//if the number proived = 0, return first element of the list:
-	else if (number == 0) return list.value;
-	//if any other number than first elem, means we have to dive another level inside the list
-	//to find the next value
-	//list.rest -> the next level of the list
-	// n-1, represnt lower index since we dived a level (nested)	
-	else
-	{
-		nth(list.rest, number - 1);
-	}
+	//if all checks pass
+	return true;
 };
