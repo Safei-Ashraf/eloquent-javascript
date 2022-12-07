@@ -4,9 +4,19 @@ Every value that is written litteraly is an Expression e.g. "22"
 
 A JS statement is composed of expression(s), and a program is a list of statements.
 
-Side Effect: when a statement could change the state of the machine in a way that will affect the statements that come after it
+<strong>Side Effect</strong>: when a statement could change the state of the machine in a way that will affect the statements that come after it
 
-Bindings:
+E.g:
+
+-   Mutating(changing) the input itself.
+
+-   Querying/Updating DOM
+
+-   Logging(even in the console)
+
+-   Making an XHR/fetch call.
+
+<strong>Bindings</strong>:
 To capture a value, it needs to be stored somewhere, usually in a variable/binding.
 
 After a binding has been defined, its name could be used as an expression
