@@ -6,7 +6,7 @@ A JS statement is composed of expression(s), and a program is a list of statemen
 
 <strong>Side Effect</strong>: when a statement could change the state of the machine in a way that will affect the statements that come after it
 
-E.g:
+E.g: Any operation that is not directly related to the final output of the function is called a Side Effect like:
 
 -   Mutating(changing) the input itself.
 

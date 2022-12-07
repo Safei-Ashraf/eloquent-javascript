@@ -79,6 +79,8 @@ When called the function body sees the environment in which it was CREATED not t
 
 <strong>A pure function: </strong> is a specific kind of value producing function that not only has no side effects but also does not rely on side effects from other code (e.g. does not rely on global bindings whose value might change)
 
+<strong>Side Effect</strong>: Any operation that is not directly related to the final output of the function is called a Side Effect
+
 A pure function has the property that when called multiple times with the same argument(s)it always produce the same output(and does not do anything else)
 
 A call to such function can be replaced with its return value and expecting no change to the code.
