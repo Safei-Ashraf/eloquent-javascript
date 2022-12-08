@@ -51,6 +51,18 @@ Like forEach, filter is a standard array method. The example defined the functio
 
 The map method transforms an array by applying a function to all of its elements and building a new array from the returned values. The new array will have the same length as the input array, but its content will have been `mapped` to a new form by the function.
 
-
 ### Summarizing with reduce
 
+Common thing to do with arrays is to compute a single value from them.
+
+The higher-order operation that represents this pattern is called reduce (sometimes also called fold). It builds a value by repeatedly taking a single element from the array and combining it with the current value. When summing numbers, you’d start with the number zero and, for each element, add that to the sum.
+
+
+### Composability
+
+
+Higher-order functions start to shine when you need to compose operations. 
+
+At work you would usually go for the more readable approach when coding, however if you are processing large amounts of data using a reptitive processing methods, going for abstract might be a better options and it should refelct on better speed/performance.
+
+### Strings and character codes
