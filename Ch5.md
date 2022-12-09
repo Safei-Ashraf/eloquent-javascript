@@ -57,12 +57,33 @@ Common thing to do with arrays is to compute a single value from them.
 
 The higher-order operation that represents this pattern is called reduce (sometimes also called fold). It builds a value by repeatedly taking a single element from the array and combining it with the current value. When summing numbers, you’d start with the number zero and, for each element, add that to the sum.
 
-
 ### Composability
 
-
-Higher-order functions start to shine when you need to compose operations. 
+Higher-order functions start to shine when you need to compose operations.
 
 At work you would usually go for the more readable approach when coding, however if you are processing large amounts of data using a reptitive processing methods, going for abstract might be a better options and it should refelct on better speed/performance.
 
 ### Strings and character codes
+
+In JS strings are encoded as a sequence of 16-bit numbers. These are called code units. A Unicode character code was initially supposed to fit within such a unit (which gives you a little over 65,000 characters). When it became clear that wasn’t going to be enough, many people balked at the need to use more memory per character. To address these concerns, UTF-16, the format used by JavaScript strings, was invented. It describes most common characters using a single 16-bit code unit but uses a pair of two such units for others.
+
+    // Two emoji characters, horse and shoe
+    let horseShoe = "🐴👟";
+    console.log(horseShoe.length);
+    // → 4
+    console.log(horseShoe[0]);
+    // → (Invalid half-character)
+    console.log(horseShoe.charCodeAt(0));
+    // → 55357 (Code of the half-character)
+    console.log(horseShoe.codePointAt(0));
+    // → 128052 (Actual code for horse emoji)
+
+###### findIndex.
+
+This method is somewhat like indexOf, but instead of looking for a specific value, it finds the first value for which the given function returns true. Like indexOf, it returns -1 when no such element is found.
+
+## Summary
+
+Being able to pass function values to other functions is a deeply useful aspect of JavaScript. It allows us to write functions that model computations with “gaps” in them. The code that calls these functions can fill in the gaps by providing function values.
+
+Arrays provide a number of useful higher-order methods. You can use forEach to loop over the elements in an array. The filter method returns a new array containing only the elements that pass the predicate function. Transforming an array by putting each element through a function is done with map. You can use reduce to combine all the elements in an array into a single value. The some method tests whether any element matches a given predicate function. And findIndex finds the position of the first element that matches a predicate.
