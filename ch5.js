@@ -30,6 +30,19 @@ When defining the function, you can use a regular loop to do the actual looping.
 //3-an update function [RUNS THIRD] AND LOOPS ON FROM BEGINING...
 //4-action to call (console.log) (body function) [RUNS SECOND]
 
+function testValue(n) {
+	let result = n > 0 ? true : false;
+	return result;
+}
+function updateValue(n) {
+	return n - 1;
+}
+
+function loop(n, test, update, action) {
+	for (let i = n; test(i); i = update(i)) {
+		action(i);
+	}
+}
 loop(
 	3,
 	(n) => n > 0,
