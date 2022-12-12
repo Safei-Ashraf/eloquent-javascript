@@ -24,6 +24,12 @@ When defining the function, you can use a regular loop to do the actual looping.
 */
 // Your code here.
 
+// the function takes 4 arguments
+//1-number to loop from
+//2-a test function with condition that return a boolean and stops if it return false [RUNS FIRST]
+//3-an update function [RUNS THIRD] AND LOOPS ON FROM BEGINING...
+//4-action to call (console.log) (body function) [RUNS SECOND]
+
 loop(
 	3,
 	(n) => n > 0,
